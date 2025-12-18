@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Indoor </title>
+    <title>Indoor</title>
     <link rel="stylesheet" href="Outdoor.css">
 </head>
 <body>
+    
+<style>
+body{font-family:Arial;}
+.products{display:flex;gap:20px;}
+.card{border:1px solid #ccc;padding:15px;width:200px;text-align:center;}
+button{padding:8px 12px;cursor:pointer}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.6);
+}
+.modal-content{
+  background:#fff;
+  width:400px;
+  padding:20px;
+  margin:100px auto;
+  border-radius:8px;
+}
+.close{float:right;cursor:pointer;font-size:20px}
+input,select{width:100%;padding:7px;margin:6px 0;}
+.total{font-size:20px;color:green;}
+</style>
 
 <!-- HEADER -->
 <header class="header">
@@ -30,7 +56,7 @@
             <h3>Carrom Board</h3>
             <p>High-quality indoor carrom board suitable for family fun and tournaments.</p>
             <div class="price">Rs. 400 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Carrom Board',400)">Rent</button>
         </div>
 
         <div class="card">
@@ -38,7 +64,7 @@
             <h3>Chess Board</h3>
             <p>Classic wooden chess board with pieces, perfect for indoor tournaments and casual play.</p>
             <div class="price">Rs. 350 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Chess Board',350)">Rent</button>
         </div>
 
         <div class="card">
@@ -46,7 +72,7 @@
             <h3>Ludo Set</h3>
             <p>Classic indoor Ludo game set, perfect for family fun and casual indoor play.</p>
             <div class="price">Rs. 250 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Ludo Set',250)">Rent</button>
         </div>
 
         <div class="card">
@@ -54,7 +80,7 @@
             <h3>Table Tennis Net Set</h3>
             <p>Complete indoor table tennis net set, easy to install and ideal for practice and matches.</p>
             <div class="price">Rs. 300 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Table Tennis Net Set',300)">Rent</button>
         </div>
 
         <div class="card">
@@ -62,7 +88,7 @@
             <h3>Indoor Cricket Kit</h3>
             <p>Complete indoor cricket kit including bat, ball, and stumps, ideal for safe indoor play.</p>
             <div class="price">Rs. 700 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Indoor Cricket Kit',700)">Rent</button>
         </div>
 
         <div class="card">
@@ -70,7 +96,7 @@
             <h3>Basketball</h3>
             <p>Official size and weight basketball suitable for indoor and outdoor courts.</p>
             <div class="price">Rs. 600 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Basketball',600)">Rent</button>
         </div>
 
         <div class="card">
@@ -78,7 +104,7 @@
             <h3>Safety Gear</h3>
             <p>Protective knee pads and elbow pads for safe indoor and outdoor sports activities.</p>
             <div class="price">Rs. 350 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Safety Gear',350)">Rent</button>
         </div>
 
         <div class="card">
@@ -86,7 +112,7 @@
             <h3>Scoreboard</h3>
             <p>Portable electronic scoreboard suitable for indoor and outdoor sports events and matches.</p>
             <div class="price">Rs. 1500 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Scoreboard',1500)">Rent</button>
         </div>
 
         <div class="card">
@@ -94,7 +120,7 @@
             <h3>Wrist weights</h3>
            <p>Adjustable wrist weights ideal for strength training and toning exercises.</p>
             <div class="price">Rs. 1200 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Wrist weights',1200)">Rent</button>
         </div>
 
         <div class="card">
@@ -102,10 +128,73 @@
             <h3>Balance board</h3>
             <p>Wooden balance board for improving core strength, balance, and coordination.</p>
             <div class="price">Rs. 500 / day</div>
-            <a href="NEW.HTML"><button>Take On Rent</button></a>
+            <button onclick="openModal('Balance board',500)">Rent</button>
         </div>
     </div>
 </section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h3 id="pname"></h3>
+
+    <label>Rental Type</label>
+    <select id="type">
+      <option value="day">Per Day</option>
+      <option value="week">Per Week</option>
+    </select>
+
+    <label>Duration</label>
+    <input type="number" id="duration" value="1" min="1">
+
+    <label>Quantity</label>
+    <input type="number" id="qty" value="1" min="1">
+
+    <label>Payment</label>
+    <select>
+      <option>Cash</option>
+      <option>Card</option>
+      <option>Online</option>
+    </select>
+
+    <div class="total">Total: Rs <span id="total">0</span></div>
+
+    <button onclick="calculate()">Calculate</button>
+    <button onclick="book()">Confirm Booking</button>
+  </div>
+</div>
+
+
+<script>
+let price = 0;
+
+function openModal(name, p){
+  document.getElementById("modal").style.display="block";
+  document.getElementById("pname").innerText=name;
+  price = p;
+  calculate();
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+function calculate(){
+  const type = document.getElementById("type").value;
+  const d = duration.value;
+  const q = qty.value;
+  let final = price;
+  if(type==="week") final = price*5;
+  total.innerText = final*d*q;
+}
+
+function book(){
+  alert("✅ Booking Confirmed!");
+  closeModal();
+}
+</script>
 
 
 <!-- FOOTER -->
