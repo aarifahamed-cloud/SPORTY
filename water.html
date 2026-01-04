@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Water Sports</title>
+    <title>water</title>
     <link rel="stylesheet" href="Outdoor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
-<style>
+
+  <style>
 body{font-family:Arial;}
 .products{display:flex;gap:20px;}
 .card{border:1px solid #ccc;padding:15px;width:200px;text-align:center;}
@@ -32,15 +33,15 @@ input,select{width:100%;padding:7px;margin:6px 0;}
 .total{font-size:20px;color:green;}
 </style>
 
+
 <!-- HEADER -->
 <header class="header">
     <div class="logo">SPORTS RENTAL</div>
     <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
         <a href="#categories">Equipment</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#about">Terms & Conditions</a>
         <a href="login.html"><button>LOGIN/SIGN UP</a></button>
     </nav>
 </header>
@@ -52,87 +53,86 @@ input,select{width:100%;padding:7px;margin:6px 0;}
     <div class="grid">
 
         <div class="card">
-            <img src="waterimage/water1.jpg">
+            <img src="waterimage/water1.jpg" >
             <h3>Kayak</h3>
             <p>Single-seater kayak suitable for lakes and calm rivers. Lightweight and stable for beginners.</p>
             <div class="price">Rs. 2500 / day</div>
-            <button onclick="openModal('Kayak',2500)">Rent</button>
+            <button onclick="openModal('Mountain Bike',500)">Rent</button>
         </div>
 
         <div class="card">
-            <img src="waterimage/water2.jpg">
+            <img src= "waterimage/water2.jpg">
             <h3>Paddleboard</h3>
             <p>Strong, lightweight paddleboard suitable for lakes, rivers, and beaches.</p>
             <div class="price">Rs. 2500 / day</div>
-            <button onclick="openModal('Paddleboard',2500)">Rent</button>
+            <button onclick="openModal('Mountain Bike',500)">Rent</button>
         </div>
 
         <div class="card">
-            <img src="waterimage/water3.jpg">
+            <img src="waterimage/water3.jpg" >
             <h3>Life jackets</h3>
             <p>High-quality safety life jacket suitable for boating and water sports.</p>
             <div class="price">Rs. 700 / day</div>
-            <button onclick="openModal('Life jackets',700)">Rent</button>
+            <button onclick="openModal('Mountain Bike',500)">Rent</button>
         </div>
 
         <div class="card">
-            <img src="waterimage/water4.jpg">
+            <img src="waterimage/water4.jpg" >
             <h3>Surfboard</h3>
             <p>Durable surfboard ideal for beginners and experienced surfers.</p>
             <div class="price">Rs. 800 / day</div>
-            <button onclick="openModal('Surfboard',800)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water5.jpg">
+            <img src="waterimage/water5.jpg" >
             <h3>Wetsuit</h3>
             <p>Comfortable and flexible wetsuit suitable for surfing and diving.</p>
             <div class="price">Rs. 650 / day</div>
-            <button onclick="openModal('Wetsuit',650)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water6.jpg">
+            <img src="waterimage/water6.jpg" >
             <h3>Waterproof gloves</h3>
             <p>Durable waterproof gloves ideal for kayaking, surfing, and cold water sports.</p>
-            <div class="price">Rs. 400 / day</div>
-            <button onclick="openModal('Waterproof gloves',400)">Rent</button>
+            <div class="price">Rs. 750 / day</div>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water7.jpg">
+            <img src="waterimage/water7.jpg" >
             <h3>Snorkel mask & tube</h3>
             <p>Comfortable, clear-vision snorkel mask with breathing tube for underwater exploration.</p>
             <div class="price">Rs. 900 / day</div>
-            <button onclick="openModal('Snorkel mask & tube',900)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water8.jpg">
+            <img src="waterimage/water8.jpg" >
             <h3>Swimming goggles</h3>
             <p>Anti-fog swimming goggles providing clear vision and a comfortable fit.</p>
             <div class="price">Rs. 200 / day</div>
-            <button onclick="openModal('Swimming goggles',200)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water9.jpg">
+            <img src="waterimage/water9.jpg" >
             <h3>Swim cap</h3>
             <p>Comfortable and stretchable swim cap designed for all water activities.</p>
-            <div class="price">Rs. 450 / day</div>
-            <button onclick="openModal('Swim cap',450)">Rent</button>
+            <div class="price">Rs. 1200 / day</div>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
-            <img src="waterimage/water10.jpg">
+            <img src="waterimage/water10.jpg" >
             <h3>Dry bag</h3>
             <p>Waterproof dry bag ideal for protecting belongings during water adventures.</p>
             <div class="price">Rs. 500 / day</div>
-           <button onclick="openModal('Dry bag',500)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
     </div>
 </section>
-
 
 <!-- MODAL -->
 <div class="modal" id="modal">
@@ -198,10 +198,52 @@ function book(){
 </script>
 
 
+
 <!-- FOOTER -->
+
 <footer class="footer">
-    © 2025 Sports Equipment Rental Shop
+
+  <div class="footer-container">
+
+    <!-- Contact Section -->
+    <div class="footer-box">
+      <h3>| Contact Us</h3>
+      <p><strong>Address:</strong> Anuradhapura, Sri Lanka</p>
+      <p><strong>Telephone:</strong> +94 71 869 5830</p>
+      <p><strong>Email:</strong> sportsequiprent@gmail.com</p>
+    </div>
+
+    <!-- Other Links -->
+    <div class="footer-box">
+      <h3>| Quick Links</h3>
+      <ul>
+        <li><a href="index.html">+ HOME</a></li>
+        <li><a href="index.html#about">+ ABOUT</a></li>
+        <li><a href="#categories">+ EQUIPMENT</a></li>
+        <li><a href="login.html">+ LOGIN/SIGN UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-box">
+      <h3>| Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Sports Equipment Rental & Shop | All Rights Reserved</p>
+  </div>
+
 </footer>
+
+  
 
   
 
