@@ -3,10 +3,12 @@
 <head>
     <title>outdoor</title>
     <link rel="stylesheet" href="Outdoor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 </head>
 <body>
     
-<style>
+ <style>
 body{font-family:Arial;}
 .products{display:flex;gap:20px;}
 .card{border:1px solid #ccc;padding:15px;width:200px;text-align:center;}
@@ -32,15 +34,15 @@ input,select{width:100%;padding:7px;margin:6px 0;}
 .total{font-size:20px;color:green;}
 </style>
 
+
 <!-- HEADER -->
 <header class="header">
     <div class="logo">SPORTS RENTAL</div>
     <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#categories">Equipment</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="#categories">EQUIPMENT</a>
+        <a href="index.html#about">Terms & Conditions</a>
         <a href="login.html"><button>LOGIN/SIGN UP</a></button>
     </nav>
 </header>
@@ -56,7 +58,9 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Football</h3>
             <p>High-quality outdoor football suitable for all skill levels.</p>
             <div class="price">Rs. 500 / day</div>
-            <button onclick="openModal('Mountain Bike',500)">Rent</button>
+            <button onclick="openModal('Vollyball',600)">Rent</button>
+          
+           
         </div>
 
         <div class="card">
@@ -72,7 +76,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Rugbyball</h3>
             <p>Durable outdoor rugby ball suitable for practice and match play.</p>
             <div class="price">Rs. 700 / day</div>
-            <button onclick="openModal('Rugbyball',700)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -80,7 +84,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Cricketbat</h3>
             <p>Premium quality cricket bat suitable for matches and practice sessions.</p>
             <div class="price">Rs. 800 / day</div>
-            <button onclick="openModal('Cricketbat',800)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -88,7 +92,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Tennis Racket</h3>
             <p>Lightweight tennis racket suitable for practice and competitive matches.</p>
             <div class="price">Rs. 650 / day</div>
-            <button onclick="openModal('Tennis Racket',650)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -96,7 +100,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Baseball Bat</h3>
             <p>Durable baseball bat suitable for training and competitive matches.</p>
             <div class="price">Rs. 750 / day</div>
-            <button onclick="openModal('Baseball Bat',750)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -104,7 +108,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Hiking Backpack</h3>
             <p>Durable and spacious hiking backpack suitable for trekking and outdoor adventures.</p>
             <div class="price">Rs. 900 / day</div>
-            <button onclick="openModal('Hiking Backpack',900)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -112,7 +116,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Cricket Ball</h3>
             <p>Premium quality cricket ball suitable for matches and practice sessions.</p>
             <div class="price">Rs. 200 / day</div>
-            <button onclick="openModal('Cricket Ball',200)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -120,7 +124,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Cricket Helmet</h3>
             <p>High-quality protective cricket helmet with faceguard for safety during matches and practice.</p>
             <div class="price">Rs. 1200 / day</div>
-            <button onclick="openModal('Cricket Helmet',1200)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
 
         <div class="card">
@@ -128,7 +132,7 @@ input,select{width:100%;padding:7px;margin:6px 0;}
             <h3>Cricket Pads</h3>
             <p>Protective cricket pads suitable for batting practice and matches. Lightweight and durable.</p>
             <div class="price">Rs. 500 / day</div>
-             <button onclick="openModal('Cricket Pads',500)">Rent</button>
+            <a href="NEW.HTML"><button>Take On Rent</button></a>
         </div>
     </div>
 </section>
@@ -196,13 +200,58 @@ function book(){
 }
 </script>
 
-
 <!-- FOOTER -->
+
 <footer class="footer">
-    © 2025 Sports Equipment Rental Shop
+
+  <div class="footer-container">
+
+    <!-- Contact Section -->
+    <div class="footer-box">
+      <h3>| Contact Us</h3>
+      <p><strong>Address:</strong> Anuradhapura, Sri Lanka</p>
+      <p><strong>Telephone:</strong> +94 71 869 5830</p>
+      <p><strong>Email:</strong> sportsequiprent@gmail.com</p>
+    </div>
+
+    <!-- Other Links -->
+    <div class="footer-box">
+      <h3>| Quick Links</h3>
+      <ul>
+        <li><a href="index.html">+ HOME</a></li>
+        <li><a href="index.html#about">+ ABOUT</a></li>
+        <li><a href="#categories">+ EQUIPMENT</a></li>
+        <li><a href="login.html">+ LOGIN/SIGN UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-box">
+      <h3>| Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Sports Equipment Rental & Shop | All Rights Reserved</p>
+  </div>
+
 </footer>
 
   
 
 </body>
 </html>
+
+
+  
+
+  
+  
+
