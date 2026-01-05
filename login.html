@@ -24,6 +24,7 @@
         <form action="#">
             <input type="text" placeholder="Full Name" required>
             <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Address" required>
             <input type="password" placeholder="Create Password" required>
             <input type="password" placeholder="Confirm Password" required>
             <button type="submit">Sign Up</button>
@@ -33,21 +34,85 @@
         </form>
     </div>
 </div>
-
 <script>
-    let loginBox = document.querySelector(".login");
-    let signupBox = document.querySelector(".signup");
+// FORM SWITCHING
+const loginBox = document.querySelector(".login");
+const signupBox = document.querySelector(".signup");
 
-    document.querySelector("#showSignup").onclick = () => {
-        loginBox.style.display = "none";
-        signupBox.style.display = "block";
-    };
+document.getElementById("showSignup").addEventListener("click", function (e) {
+    e.preventDefault();
+    loginBox.style.display = "none";
+    signupBox.style.display = "block";
+});
 
-    document.querySelector("#showLogin").onclick = () => {
-        signupBox.style.display = "none";
-        loginBox.style.display = "block";
-    };
+document.getElementById("showLogin").addEventListener("click", function (e) {
+    e.preventDefault();
+    signupBox.style.display = "none";
+    loginBox.style.display = "block";
+});
+
+// DEMO STORED USER (Already Registered)
+let storedUser = {
+    username: "admin",
+    email: "admin@gmail.com",
+    password: "12345"
+};
+
+// LOGIN FUNCTION
+loginBox.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userInput = this.querySelector("input[type='text']").value;
+    const passwordInput = this.querySelector("input[type='password']").value;
+
+    if (
+        (userInput === storedUser.username || userInput === storedUser.email) &&
+        passwordInput === storedUser.password
+    ) {
+        alert("Login successful! Redirecting to payment...");
+        window.location.href = "payment.html"; // Payment page
+    } else {
+        alert("Wrong username/email or password. Try again!");
+    }
+});
+
+// SIGNUP FUNCTION
+signupBox.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const inputs = this.querySelectorAll("input");
+    const fullName = inputs[0].value;
+    const email = inputs[1].value;
+    const address = inputs[2].value;
+    const password = inputs[3].value;
+    const confirmPassword = inputs[4].value;
+
+    if (
+        fullName === "" ||
+        email === "" ||
+        address === "" ||
+        password === "" ||
+        confirmPassword === ""
+    ) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    // Save new user (demo)
+    storedUser.username = fullName;
+    storedUser.email = email;
+    storedUser.password = password;
+
+    alert("Signup successful! Redirecting to payment...");
+    window.location.href = "payment.html";
+});
 </script>
-
 </body>
 </html>
+
+   
